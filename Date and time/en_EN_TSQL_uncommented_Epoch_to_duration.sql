@@ -42,6 +42,7 @@ BEGIN
 	    WHEN (@weeks IS NOT NULL AND @days IS NOT NULL AND @hms IS NOT NULL) THEN @weeks + ', ' + @days + ', ' + @hms
 	    WHEN (@weeks IS NOT NULL AND @days IS NOT NULL AND @hms IS NULL) THEN @weeks + ', ' + @days
 	    WHEN (@weeks IS NOT NULL AND @days IS NULL AND @hms IS NOT NULL) THEN @weeks + ', ' + @hms
+	    WHEN (@weeks IS NOT NULL AND @days IS NULL AND @hms IS NULL) THEN @weeks
 	    WHEN (@weeks IS NULL AND @days IS NOT NULL AND @hms IS NOT NULL) THEN @days + ', ' + @hms
 	    WHEN (@weeks IS NULL AND @days IS NOT NULL AND @hms IS NULL) THEN @days
 	    WHEN (@weeks IS NULL AND @days IS NULL AND @hms IS NOT NULL) THEN @hms

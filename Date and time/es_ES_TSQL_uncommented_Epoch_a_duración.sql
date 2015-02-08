@@ -42,6 +42,7 @@ BEGIN
 	    WHEN (@semanas IS NOT NULL AND @dias IS NOT NULL AND @hms IS NOT NULL) THEN @semanas + ', ' + @dias + ', ' + @hms
 	    WHEN (@semanas IS NOT NULL AND @dias IS NOT NULL AND @hms IS NULL) THEN @semanas + ', ' + @dias
 	    WHEN (@semanas IS NOT NULL AND @dias IS NULL AND @hms IS NOT NULL) THEN @semanas + ', ' + @hms
+	    WHEN (@semanas IS NOT NULL AND @dias IS NULL AND @hms IS NOT NULL) THEN @semanas
 	    WHEN (@semanas IS NULL AND @dias IS NOT NULL AND @hms IS NOT NULL) THEN @dias + ', ' + @hms
 	    WHEN (@semanas IS NULL AND @dias IS NOT NULL AND @hms IS NULL) THEN @dias
 	    WHEN (@semanas IS NULL AND @dias IS NULL AND @hms IS NOT NULL) THEN @hms

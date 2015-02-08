@@ -88,6 +88,8 @@ BEGIN
 	    WHEN (@semanas IS NOT NULL AND @dias IS NOT NULL AND @hms IS NULL) THEN @semanas + ', ' + @dias
 		-- Con semanas y tiempo, sin días:
 	    WHEN (@semanas IS NOT NULL AND @dias IS NULL AND @hms IS NOT NULL) THEN @semanas + ', ' + @hms
+		-- Con semanas, sin días ni tiempo:
+	    WHEN (@semanas IS NOT NULL AND @dias IS NULL AND @hms IS NOT NULL) THEN @semanas
 	    -- Sin semanas, con días y tiempo:
 	    WHEN (@semanas IS NULL AND @dias IS NOT NULL AND @hms IS NOT NULL) THEN @dias + ', ' + @hms
 		-- Sin semanas, con días y sin tiempo:
